@@ -40,3 +40,37 @@
 - *Executar bash ubuntu*
 
 ```docker exec -it patrick-ubuntu /bin/bash```
+
+# Docker-Compose
+
+## Docker-Compose Cheat Sheets
+
+- https://devhints.io/docker-compose
+
+## Comandos mais utilizados containers
+
+- *Executar bash aplicação*
+
+```docker exec -it app bash```
+
+- *Executar bash banco mysql*
+
+```docker exec -it db bash```
+
+## Comandos mais utilizados mysql
+
+- *Entrar no banco*
+
+```mysql -uroot -p```
+
+- *Mostrar DBs criados*
+
+```show databases;```
+
+- *Criação da tabela exemplo da aplicação*
+
+```use nodedb;```
+
+```create table people(id int not null auto_increment, name varchar(255), primary key(id));```
+
+```desc people;```

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+
+  laravel:
+    build:
+      context: ./pratica_docker_com_php/laravel/
+      dockerfile: Dockerfile.prod
+    image: patrickmarques/laravel:prod
+    container_name: laravel
+    networks:
+      - laranet-patrick
+
+  ngnix:
+    build:
+      context: ./pratica_docker_com_nginx/nginx/
+      dockerfile: Dockerfile.prod
+    image: patrickmarques/nginx:prod
+    container_name: nginx
+    networks:
+      - laranet-patrick
+    ports:
+      - "8080:80"
+
+networks:
+  laranet-patrick:
+    driver: bridge
