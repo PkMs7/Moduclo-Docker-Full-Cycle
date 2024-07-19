@@ -9,34 +9,34 @@
 
 **Build**
 
-*Imagem Laravel*
+- *Imagem Laravel*
 
-```docker build -t patrickmarques/laravel:prod . -f Dockerfile.prod```
+```docker build -t patrickmarques/laravel:prod pratica_docker_com_php/laravel/ -f pratica_docker_com_php/laravel/Dockerfile.prod```
 
-*Imagem Ngnix*
+- *Imagem Nginx*
 
-```docker build -t patrickmarques/ngnix:prod . -f Dockerfile.prod```
+```docker build -t patrickmarques/nginx:prod pratica_docker_com_nginx/nginx/ -f pratica_docker_com_nginx/nginx/Dockerfile.prod```
 
 **Network**
 
-*Rede para Proxy com Ngnix*
+- *Rede para Proxy com Ngnix*
 
-```docker network create  laranet-patrick```
+```docker network create laranet-patrick```
 
 **Container**
 
-*Imagem Laravel Alpine*
+- *Imagem Laravel Alpine*
 
-```docker run -d --network laranet-patrick --name patrick-laravel patrickmarques/laravel:prod```
+```docker run -d --network laranet-patrick --name laravel patrickmarques/laravel:prod```
 
-*Imagem Nginx Alpine*
+- *Imagem Nginx Alpine*
 
-```docker run -d --network laranet-patrick --name patrick-ngnix -p 8080:80 patrickmarques/ngnix:prod```
+```docker run -d --network laranet-patrick --name nginx -p 8080:80 patrickmarques/nginx:prod```
 
-*Imagem Ubuntu*
+- *Imagem Ubuntu*
 
 ```docker run -it -d --network laranet-patrick --name patrick-ubuntu ubuntu```
 
-*Executar bash ubuntu*
+- *Executar bash ubuntu*
 
 ```docker exec -it patrick-ubuntu /bin/bash```

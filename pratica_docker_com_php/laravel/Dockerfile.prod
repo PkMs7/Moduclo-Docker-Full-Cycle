@@ -16,7 +16,7 @@ RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" &&
 
 # https://laravel.com/docs/11.x/installation
 
-RUN php composer.phar create-project --prefer-dist laravel/laravel fc-docker-laravel-patrick-app
+RUN php composer.phar create-project --prefer-dist laravel/laravel laravel
 
 
 # Estágio de build 2
@@ -27,7 +27,7 @@ WORKDIR /var/www
 
 RUN rm -rf /var/www/html
 
-COPY --from=builder /var/www/fc-docker-laravel-patrick-app .
+COPY --from=builder /var/www/laravel .
 
 RUN ln -s public html
 
