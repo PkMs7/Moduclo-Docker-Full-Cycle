@@ -5,6 +5,10 @@
 - https://docs.docker.com/get-started/docker_cheatsheet.pdf
 - https://dockerlabs.collabnix.com/docker/cheatsheet/
 
+## Repositório dos Desafios do Módulo
+
+- https://hub.docker.com/r/patrickmarquesdev/fullcycle
+
 ## Comandos mais utilizados
 
 **Build**
